@@ -43,7 +43,15 @@ end
 new_arr.flatten
 end
 
+
 def all_supplies_in_holidays(holiday_hash)
+
+holiday_hash.each do |season, holiday|
+puts "#{season.capitalize}:"
+
+holiday.each do |day, celebrate|
+puts "#{day.capitalize}: #{celebrate.join(', ')}"
+
   # iterate through holiday_hash and print items such that your readout resembles:
   # Winter:
   #   Christmas: Lights, Wreath
@@ -51,7 +59,8 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-
+end
+end
 end
 
 def all_holidays_with_bbq(holiday_hash)
