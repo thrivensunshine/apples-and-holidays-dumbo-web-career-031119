@@ -18,6 +18,17 @@ def second_supply_for_fourth_of_july(holiday_hash)
   #   }
   # }
   # return the second element in the 4th of July array
+  ans = ''
+  hash.each do |key, value|
+  # puts "#{value} first layer"
+  value.each do |holiday, celebrate|
+  # puts "#{holiday} holiday layer 2"
+  if holiday == :fourth_of_july
+  ans = celebrate[1]
+  end
+  end
+  end
+  ans
 end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
