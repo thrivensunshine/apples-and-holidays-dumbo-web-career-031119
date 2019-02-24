@@ -50,7 +50,7 @@ holiday_hash.each do |season, holiday|
 puts "#{season.capitalize}:"
 
 holiday.each do |day, celebrate|
-puts "#{day.capitalize}: #{celebrate.join(', ')}"
+puts " #{day.capitalize}: #{celebrate.join(', ')}"
 
   # iterate through holiday_hash and print items such that your readout resembles:
   # Winter:
