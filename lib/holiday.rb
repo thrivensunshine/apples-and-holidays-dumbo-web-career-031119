@@ -43,25 +43,34 @@ end
 new_arr.flatten
 end
 
-
 def all_supplies_in_holidays(holiday_hash)
+#--------I was close on this one but I had to look it up.I need more practice with map------
 
-holiday_hash.each do |season, holiday|
-puts "#{season.capitalize}:"
+# holiday_hash.each do |season, holiday|
+# puts "#{season.capitalize}:"
 
-holiday.each do |day, celebrate|
-puts "  #{day.capitalize}: #{celebrate.join(', ')}"
+# holiday.each do |day, celebrate|
+# test = day.to_s.split("_").join(" ")
 
-  # iterate through holiday_hash and print items such that your readout resembles:
-  # Winter:
-  #   Christmas: Lights, Wreath
-  #   New Years: Party Hats
-  # Summer:
-  #   Fourth Of July: Fireworks, BBQ
-  # etc.
+# puts"  #{test.gsub(/_/," ")}: #{celebrate.join(', ')}"
+
+#   # Winter:
+#   #   Christmas: Lights, Wreath
+#   #   New Years: Party Hats
+#   # Summer:
+#   #   Fourth Of July: Fireworks, BBQ
+#   # etc.
+
+  answer = ""
+  holiday_hash.each do |season,value|
+    puts ("#{season}".capitalize. + ":")
+    value.each do |holi,supp|
+      line = "  " + "#{holi}".gsub(/_/," ").split.map(&:capitalize).join(' ') + ": #{supp.join(", ")}"
+      puts line
+    end
+  end
 end
-end
-end
+
 
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
